@@ -1,5 +1,4 @@
 import React from 'react';
-// import './inputcomponent.scss';
 
 export default class InputComponent extends React.Component {
    
@@ -12,10 +11,6 @@ export default class InputComponent extends React.Component {
     render() {
         if(!this.props.dataTarget){
             return (
-                // <div>
-                //     <p>{this.props.label}</p>
-                //     <input type="text" onChange={this.sendInput.bind(this)} defaultValue="0"/>
-                // </div>
             <div className="slds-form-element custom-form">
                 <label className="slds-form-element__label" htmlFor="text-input-id-1">{this.props.label}</label>
                 <div className="slds-form-element__control">
@@ -26,10 +21,6 @@ export default class InputComponent extends React.Component {
         }
         else {
             return (
-                // <div>
-                //     <p>{this.props.label}</p>
-                //     <input type="text" readOnly value={this.props.result}/>
-                // </div>
                 <div className="slds-form-element custom-form">
                     <label className="slds-form-element__label" htmlFor="text-input-id-2">{this.props.label}</label>
                     <div className="slds-form-element__control">

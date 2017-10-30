@@ -17,8 +17,6 @@ export default class CurrencyConverter extends React.Component {
         this.updateToType = this.updateToType.bind(this);      
         this.state = {
             result : 0
-            // fromValue:1,
-            // toValue:1
         }
     }
     componentDidMount(){
@@ -45,23 +43,17 @@ export default class CurrencyConverter extends React.Component {
         this.setState({result:newVal});
     }
     getInput(input){
-        // if(inputValue){    
-        //     this.setState({inputValue});
-        //    }
         inputValue=input;
-        //    console.log('inside getInput',.inputValue)
         this.calculate(); 
     }
     updateFromType(fromUnit){
        var fromVal = rates[fromUnit];
-    //    this.setState({fromValue:fromVal});
-    fromValue = fromVal;
+       fromValue = fromVal;
        this.calculate(); 
     }
 
     updateToType(toUnit){
         var toVal = rates[toUnit];
-        // this.setState({toValue:toVal});
         toValue = toVal;
         this.calculate(); 
     }

@@ -1,0 +1,6 @@
+$slds-load-webfonts: false;
+@import "~@salesforce-ux/design-system/scss/index";
+@import "./components/currency-converter/currency-converter";
+@import "./components/input/input-component";
+@import "./components/select/select-component";
+

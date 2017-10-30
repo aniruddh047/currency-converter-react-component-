@@ -1,0 +1,11 @@
+
+// styling for select
+
+.custom-select {
+    width: 35%;
+    display: inline-block;
+    margin:5px;
+    .select--background {
+        background: linear-gradient(to bottom , whitesmoke,#dbdbdb)
+    }
+}

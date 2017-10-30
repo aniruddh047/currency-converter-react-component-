@@ -16,7 +16,7 @@ export default class SelectComponent extends React.Component {
     }
     
     render() {
-        console.log(this.props.dataArray)
+        // console.log(this.props.dataArray)
         // var array = this.props.dataArray.map(function(item){
             // return (<option>{item}</option>)
         // });
@@ -33,9 +33,9 @@ export default class SelectComponent extends React.Component {
                     <div className="slds-select_container">
                         <select className="slds-select select--background" onChange={this.updateCurrencyType.bind(this)}>
                         {/* <option>{array}</option> */}
-                        {/* <option>USD</option> */}
-                        {/* <option>CAD</option> */}
-                        {/* <option>EUR</option> */}
+                            <option>EUR</option>
+                            <option>CAD</option>
+                            <option>USD</option>
                         </select>
                     </div>
                 </div>

@@ -41,12 +41,8 @@ export default class CurrencyConverter extends React.Component {
     }
     calculate(){   
         var newVal =inputValue*(toValue/fromValue);
-        if(typeof newVal != NaN) {
         newVal = newVal.toFixed(2);
         this.setState({result:newVal});
-        }else{
-            console.log('its Nan')
-        }
     }
     getInput(input){
         // if(inputValue){    

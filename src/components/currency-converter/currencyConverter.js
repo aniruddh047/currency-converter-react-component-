@@ -19,8 +19,12 @@ export default class CurrencyConverter extends React.Component {
             result : 0
         }
     }
-    componentDidMount(){
+    componentWillMount(){
         this.fetchData();
+        var app = document.getElementById('app');
+        app.style.width = ''+window.innerWidth+'px';
+        app.style.height = ''+window.innerHeight+'px'; 
+        
     }
     fetchData(){
         var xhttp = new XMLHttpRequest();
@@ -31,19 +35,33 @@ export default class CurrencyConverter extends React.Component {
             rates.EUR = 1;
             console.log('rates is ',rates)
             currencyArray = Object.keys(rates);
+          }else if(this.status == 404){
+            document.write('page not found');
           }
         };
-        var targetUrl = 'http://api.fixer.io/latest?symbols=USD,CAD'
+        var requiredUnits = 'USD,CAD'
+        var targetUrl = 'http://api.fixer.io/latest?symbols='+requiredUnits;
         xhttp.open("GET", targetUrl, true);
         xhttp.send();   
     }
-    calculate(){   
-        var newVal =inputValue*(toValue/fromValue);
-        newVal = newVal.toFixed(2);
-        this.setState({result:newVal});
+    calculate(){
+        // console.log(typeof inputValue) 
+        var pattern = /^\d+$/;
+        if(pattern.test(inputValue)){
+            // hide error container
+            document.getElementsByClassName('error-container')[0].style.display = 'none';
+            
+            var newVal =inputValue*(toValue/fromValue);
+            newVal = newVal.toFixed(2);
+            this.setState({result:newVal});
+        }else{
+            // show error container
+            document.getElementsByClassName('error-container')[0].style.display = 'block';
+        }
     }
     getInput(input){
         inputValue=input;
+        document.getElementsByClassName('error-container')[0].style.display = 'none';
         this.calculate(); 
     }
     updateFromType(fromUnit){

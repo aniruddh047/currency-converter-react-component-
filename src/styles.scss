@@ -3,4 +3,24 @@ $slds-load-webfonts: false;
 @import "./components/currency-converter/currency-converter";
 @import "./components/input/input-component";
 @import "./components/select/select-component";
+@import "./components/error/error-component";
 
+body {
+    background-color: rgba(249,99,2,0.9);
+    #app {
+        overflow: hidden;
+
+        .input-conditions {
+            margin:20px;
+            padding: 20px;
+            border-radius: 10px;
+            color: rgb(249,99,2);
+            box-shadow: 0px 3px 8px  black;
+            background: white;
+            ul {
+                list-style-type: square;
+                margin-left: 20px;
+            }
+        }
+    }
+}
